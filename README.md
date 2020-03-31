@@ -1,2 +1,1 @@
-# MyLocations
 # MeinLieblingsOrt
