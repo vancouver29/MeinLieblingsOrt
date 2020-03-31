@@ -14,7 +14,6 @@
 		E96D64C924334C3B0086521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96D64C724334C3B0086521E /* Main.storyboard */; };
 		E96D64CB24334C3F0086521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E96D64CA24334C3F0086521E /* Assets.xcassets */; };
 		E96D64CE24334C3F0086521E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96D64CC24334C3F0086521E /* LaunchScreen.storyboard */; };
-		E96D64D62433642F0086521E /* Hellothere.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96D64D52433642F0086521E /* Hellothere.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		E96D64CA24334C3F0086521E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E96D64CD24334C3F0086521E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E96D64CF24334C3F0086521E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E96D64D52433642F0086521E /* Hellothere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hellothere.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				E96D64CA24334C3F0086521E /* Assets.xcassets */,
 				E96D64CC24334C3F0086521E /* LaunchScreen.storyboard */,
 				E96D64CF24334C3F0086521E /* Info.plist */,
-				E96D64D52433642F0086521E /* Hellothere.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96D64D62433642F0086521E /* Hellothere.swift in Sources */,
 				E96D64C624334C3B0086521E /* SecondViewController.swift in Sources */,
 				E96D64C424334C3B0086521E /* CurrentLocationViewController.swift in Sources */,
 				E96D64C024334C3B0086521E /* AppDelegate.swift in Sources */,
