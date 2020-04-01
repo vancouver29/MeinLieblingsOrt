@@ -52,6 +52,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE7-iS-Dg8">
                                 <rect key="frame" x="16" y="473" width="288" height="30"/>
                                 <state key="normal" title="Get My Location"/>
+                                <connections>
+                                    <action selector="getLocation" destination="9pv-A4-QxB" eventType="touchUpInside" id="zE1-Nc-qIZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Address goes here)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZF-qh-Aam">
                                 <rect key="frame" x="16" y="139" width="288" height="20.5"/>
@@ -92,7 +95,7 @@
                     <tabBarItem key="tabBarItem" title="Tag" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="addressLabel" destination="PZF-qh-Aam" id="5GC-kI-tPJ"/>
-                        <outlet property="getButtion" destination="QE7-iS-Dg8" id="ONk-82-WAL"/>
+                        <outlet property="getButton" destination="QE7-iS-Dg8" id="faq-jT-kBL"/>
                         <outlet property="latitudeLabel" destination="nvZ-ek-ZIH" id="MMd-vh-UYo"/>
                         <outlet property="longtitudeLabel" destination="Y9W-Eg-Hb8" id="YqG-2Z-WN7"/>
                         <outlet property="messageLabel" destination="dTr-W1-zjc" id="eb0-Tq-3YC"/>
