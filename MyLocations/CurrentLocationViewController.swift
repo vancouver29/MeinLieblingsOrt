@@ -53,6 +53,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         } else {
             location = nil
             lastLocationError = nil
+            placemark = nil
+            lastGeocodingError = nil
+            
             startLocationManager()
         }
         updateLabels()
@@ -108,13 +111,22 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 
                 geocoder.reverseGeocodeLocation(newLocation, completionHandler: {
                     placemarks, error in
-                    if let error = error {
-                        print("*** Reverse Geocoding error: \(error.localizedDescription)")
-                        return
+//                    if let error = error {
+//                        print("*** Reverse Geocoding error: \(error.localizedDescription)")
+//                        return
+//                    }
+//                    if let places = placemarks {
+//                        print("*** Found places: \(places)")
+//                    }
+                    self.lastGeocodingError = error
+                    if error == nil, let p = placemarks, !p.isEmpty {
+                        self.placemark = p.last!
+                    } else {
+                        self.placemark = nil
                     }
-                    if let places = placemarks {
-                        print("*** Found places: \(places)")
-                    }
+                    
+                    self.performingReverseGeocoding = false
+                    self.updateLabels()
                 })
             }
         }
@@ -140,6 +152,17 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             longtitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
             tagButton.isHidden = false
             messageLabel.text = ""
+            
+            // Displaying the address
+            if let placemark = placemark {
+                addressLabel.text = string(from: placemark)
+            } else if performingReverseGeocoding {
+                addressLabel.text = "Searching for Address..."
+            } else if lastGeocodingError != nil {
+                addressLabel.text = "Error Finding Address"
+            } else {
+                addressLabel.text = "No Address Found"
+            }
         } else {
             latitudeLabel.text = ""
             longtitudeLabel.text = ""
@@ -189,6 +212,34 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         } else {
             getButton.setTitle("Get My Location", for: .normal)
         }
+    }
+    
+    func string(from placemark: CLPlacemark) -> String {
+        var line1 = ""
+        // house number
+        if let s = placemark.subThoroughfare {
+            line1 += s + " "
+        }
+        // street name
+        if let s = placemark.thoroughfare {
+            line1 += s
+        }
+        
+        var line2 = ""
+        // city
+        if let s = placemark.locality {
+            line2 += s + " "
+        }
+        // state or province
+        if let s = placemark.administrativeArea {
+            line2 += s + " "
+        }
+        // zip code
+        if let s = placemark.postalCode {
+            line2 += s
+        }
+        // the full address
+        return line1 + "\n" + line2
     }
 }
 
