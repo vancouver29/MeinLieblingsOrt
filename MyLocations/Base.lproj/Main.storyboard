@@ -224,7 +224,18 @@
                             <outlet property="delegate" destination="SEp-Vl-qdO" id="Xxd-Ye-MOD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="TagLocation" id="WJ9-4n-BKE"/>
+                    <navigationItem key="navigationItem" title="TagLocation" id="WJ9-4n-BKE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hLC-8h-wod">
+                            <connections>
+                                <action selector="cancel" destination="SEp-Vl-qdO" id="3dH-c5-RLm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Oh1-MC-UVa">
+                            <connections>
+                                <action selector="done" destination="SEp-Vl-qdO" id="nuu-gu-IQR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eE-oN-KPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
